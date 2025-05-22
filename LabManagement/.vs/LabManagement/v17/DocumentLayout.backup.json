@@ -34,24 +34,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 254,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "LoginForm.cs",
               "DocumentMoniker": "D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\LoginForm.cs",
               "RelativeDocumentMoniker": "LoginForm.cs",
-              "ToolTip": "D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\LoginForm.cs*",
-              "RelativeToolTip": "LoginForm.cs*",
+              "ToolTip": "D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\LoginForm.cs",
+              "RelativeToolTip": "LoginForm.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAABoAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-22T12:28:51.312Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
               "$type": "Document",
