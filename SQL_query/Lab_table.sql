@@ -1,0 +1,5 @@
+CREATE TABLE Lab (
+    LabID INT PRIMARY KEY,
+    LabName NVARCHAR(100) NOT NULL,
+    Location NVARCHAR(100)
+);
