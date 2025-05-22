@@ -11,13 +11,21 @@ using System.Windows.Forms;
 
 namespace LabManagement
 {
+
     public partial class LoginForm: Form
     {
         //全局变量：登录角色
         public string LoggedInRole { get; private set; }
+
         public LoginForm()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Text = "用户登录 - 实验室设备管理系统";
+            this.Icon = new Icon(Application.StartupPath + @"\Resources\logo.ico");
+            this.AcceptButton = btnLogin; // 让回车键触发登录按钮
+            this.CancelButton = btnExit; // 设置 ESC 快捷键退出
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -62,6 +70,32 @@ namespace LabManagement
                 {
                     lblMessage.Text = "数据库连接失败：" + ex.Message;
                 }
+            }
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void chkShowPwd_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPassword.UseSystemPasswordChar = !chkShowPwd.Checked;
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+          
+            DialogResult result = MessageBox.Show(
+                "确定要退出系统吗？",
+                "退出确认",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
             }
 
         }
