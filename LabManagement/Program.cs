@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace LabManagement
 {
     static class Program
@@ -14,9 +15,15 @@ namespace LabManagement
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+           Application.EnableVisualStyles();
+        Application.SetCompatibleTextRenderingDefault(false);
+
+        LoginForm login = new LoginForm();
+        if (login.ShowDialog() == DialogResult.OK)
+        {
+            // 登录成功后启动主窗口
+            Application.Run(new MainForm(login.LoggedInRole)); // 可以传入角色
+        }
         }
     }
 }

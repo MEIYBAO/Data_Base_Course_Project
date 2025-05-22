@@ -3,12 +3,28 @@
   "WorkspaceRootPath": "D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|d:\\\u6587\u4EF6\\data_base_course_project\\labmanagement\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|d:\\\u6587\u4EF6\\data_base_course_project\\labmanagement\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|d:\\\u6587\u4EF6\\data_base_course_project\\labmanagement\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|solutionrelative:mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,27 +43,73 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\Form1.cs",
-              "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\Form1.cs*",
-              "RelativeToolTip": "Form1.cs*",
-              "ViewState": "AgIAABYAAAAAAAAAAAAowCEAAAAzAAAAAAAAAA==",
+              "Title": "LoginForm.cs",
+              "DocumentMoniker": "D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\LoginForm.cs",
+              "RelativeDocumentMoniker": "LoginForm.cs",
+              "ToolTip": "D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\LoginForm.cs",
+              "RelativeToolTip": "LoginForm.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAqwCcAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T11:58:27.27Z",
+              "WhenOpened": "2025-05-22T12:28:51.312Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form1.cs [\u8BBE\u8BA1]",
-              "DocumentMoniker": "D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\Form1.cs",
-              "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\Form1.cs [\u8BBE\u8BA1]*",
-              "RelativeToolTip": "Form1.cs [\u8BBE\u8BA1]*",
+              "DocumentIndex": 4,
+              "Title": "MainForm.Designer.cs",
+              "DocumentMoniker": "D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\MainForm.Designer.cs",
+              "RelativeDocumentMoniker": "MainForm.Designer.cs",
+              "ToolTip": "D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\MainForm.Designer.cs",
+              "RelativeToolTip": "MainForm.Designer.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAwBoAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T11:56:31.611Z",
-              "EditorCaption": " [\u8BBE\u8BA1]"
+              "WhenOpened": "2025-05-22T12:39:16.029Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\MainForm.cs",
+              "RelativeDocumentMoniker": "MainForm.cs",
+              "ToolTip": "D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\MainForm.cs",
+              "RelativeToolTip": "MainForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T12:37:38.378Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainForm.cs [\u8BBE\u8BA1]",
+              "DocumentMoniker": "D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\MainForm.cs",
+              "RelativeDocumentMoniker": "MainForm.cs",
+              "ToolTip": "D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\MainForm.cs [\u8BBE\u8BA1]",
+              "RelativeToolTip": "MainForm.cs [\u8BBE\u8BA1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T12:37:17.525Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LoginForm.cs [\u8BBE\u8BA1]",
+              "DocumentMoniker": "D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\LoginForm.cs",
+              "RelativeDocumentMoniker": "LoginForm.cs",
+              "ToolTip": "D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\LoginForm.cs [\u8BBE\u8BA1]",
+              "RelativeToolTip": "LoginForm.cs [\u8BBE\u8BA1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T12:25:22.46Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T12:33:35.984Z"
             }
           ]
         },
