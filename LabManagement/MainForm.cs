@@ -20,19 +20,27 @@ namespace LabManagement
             // 可留空或添加初始化代码
         }
 
-        public MainForm(string role)
+        public MainForm()
         {
             InitializeComponent();
 
-            userRole = role;
-            this.Text = $"欢迎使用实验室仪器管理系统 - 当前角色：{userRole}";
+            this.Text = $"欢迎 {CurrentUser.UserName} 使用实验室仪器管理系统 - 当前角色：{CurrentUser.Role}";
 
             // 示例：根据角色隐藏某些控件
-            if (userRole != "管理员")
-            {
-                // 比如隐藏“添加设备”按钮
-                // btnAddDevice.Visible = false;
-            }
+           
+            // 权限控制
+            btnUserManager.Visible = CurrentUser.Role == "管理员";
+        }
+
+        private void btnDeviceManager_Click(object sender, EventArgs e)
+        {
+            DeviceManagementForm form = new DeviceManagementForm();
+            form.ShowDialog();
+        }
+
+        private void btnUserManager_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

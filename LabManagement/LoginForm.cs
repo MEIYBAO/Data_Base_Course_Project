@@ -14,8 +14,38 @@ namespace LabManagement
 
     public partial class LoginForm: Form
     {
-        //全局变量：登录角色
-        public string LoggedInRole { get; private set; }
+        private List<string> LoadUserPermissionsFromDatabase(int userId)
+        {
+            List<string> permissions = new List<string>();
+            string connStr = "Data Source=localhost;Initial Catalog=LabDeviceManagement;Integrated Security=True;";
+
+            string sql = @"
+            SELECT P.PermissionName 
+            FROM UserPermission UP
+            JOIN Permission P ON UP.PermissionID = P.PermissionID
+            WHERE UP.UserID = @userId";
+
+            using (SqlConnection conn = new SqlConnection(connStr))
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                cmd.Parameters.AddWithValue("@userId", userId);
+                try
+                {
+                    conn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        permissions.Add(reader.GetString(0));
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("加载权限失败：" + ex.Message);
+                }
+            }
+
+            return permissions;
+        }
 
         public LoginForm()
         {
@@ -41,9 +71,9 @@ namespace LabManagement
 
             string connStr = "Data Source=localhost;Initial Catalog=LabDeviceManagement;Integrated Security=True;";
             string sql = @"
-                SELECT Role FROM UserInfo 
-                WHERE Username = @username 
-                AND PasswordHash = HASHBYTES('SHA2_256', @password)";
+            SELECT UserID, Role FROM UserInfo 
+            WHERE Username = @username 
+            AND PasswordHash = HASHBYTES('SHA2_256', @password)";
 
             using (SqlConnection conn = new SqlConnection(connStr))
             using (SqlCommand cmd = new SqlCommand(sql, conn))
@@ -54,16 +84,34 @@ namespace LabManagement
                 try
                 {
                     conn.Open();
-                    object result = cmd.ExecuteScalar();
-                    if (result != null)
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        LoggedInRole = result.ToString();
-                        DialogResult = DialogResult.OK; // 关闭登录窗口，允许进入主窗体
-                        this.Close();
-                    }
-                    else
-                    {
-                        lblMessage.Text = "用户名或密码错误";
+                        if (reader.Read())
+                        {
+                            int userId = reader.GetInt32(0);
+                            string role = reader.GetString(1);
+
+                            //  初始化全局用户状态
+                            CurrentUser.UserID = userId;
+                            CurrentUser.UserName = username;
+                            CurrentUser.Role = role;
+
+                            if (role == "管理员")
+                            {
+                                CurrentUser.Permissions = new List<string> { "查看设备", "添加设备", "删除设备", "管理用户" };
+                            }
+                            else
+                            {
+                                CurrentUser.Permissions = LoadUserPermissionsFromDatabase(userId);
+                            }
+
+                            DialogResult = DialogResult.OK; // 登录成功，关闭窗口
+                            this.Close();
+                        }
+                        else
+                        {
+                            lblMessage.Text = "用户名或密码错误";
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -71,8 +119,9 @@ namespace LabManagement
                     lblMessage.Text = "数据库连接失败：" + ex.Message;
                 }
             }
-
         }
+
+
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {

@@ -15,15 +15,16 @@ namespace LabManagement
         [STAThread]
         static void Main()
         {
-           Application.EnableVisualStyles();
-        Application.SetCompatibleTextRenderingDefault(false);
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
 
-        LoginForm login = new LoginForm();
-        if (login.ShowDialog() == DialogResult.OK)
-        {
-            // 登录成功后启动主窗口
-            Application.Run(new MainForm(login.LoggedInRole)); // 可以传入角色
-        }
+
+            LoginForm login = new LoginForm();
+            if (login.ShowDialog() == DialogResult.OK)
+            {
+                // 登录成功后启动主窗口
+                Application.Run(new MainForm()); 
+            }
         }
     }
 }

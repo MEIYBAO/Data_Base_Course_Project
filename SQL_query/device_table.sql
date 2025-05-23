@@ -1,5 +1,5 @@
 CREATE TABLE Device (
-    DeviceID INT PRIMARY KEY,
+    DeviceID INT PRIMARY KEY IDENTITY(1,1),
     DeviceName NVARCHAR(100) NOT NULL,
     Model NVARCHAR(50),
     PurchaseDate DATE,

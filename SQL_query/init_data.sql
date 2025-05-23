@@ -14,5 +14,5 @@ INSERT INTO Manager (ManagerID,Name, Contact)
 VALUES (01,'李老师', '13888888888');
 
 -- 添加设备
-INSERT INTO Device (DeviceID,DeviceName, Model, PurchaseDate, Status, LabID, ManagerID)
-VALUES (01,'光谱分析仪', 'SP-2000', '2022-09-01', '正常', 1, 1);
+INSERT INTO Device (DeviceName, Model, PurchaseDate, Status, LabID, ManagerID)
+VALUES ('光谱分析仪', 'SP-2000', '2022-09-01', '正常', 1, 1);
