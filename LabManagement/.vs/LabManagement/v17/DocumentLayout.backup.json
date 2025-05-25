@@ -3,7 +3,11 @@
   "WorkspaceRootPath": "D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|d:\\\u6587\u4EF6\\data_base_course_project\\labmanagement\\devicemanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|d:\\\u6587\u4EF6\\data_base_course_project\\labmanagement\\deviceeditform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|solutionrelative:deviceeditform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\devicemanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|solutionrelative:devicemanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -11,23 +15,19 @@
       "RelativeMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|d:\\\u6587\u4EF6\\data_base_course_project\\labmanagement\\deviceeditform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|solutionrelative:deviceeditform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|d:\\\u6587\u4EF6\\data_base_course_project\\labmanagement\\devicemanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\devicemanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|solutionrelative:devicemanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|d:\\\u6587\u4EF6\\data_base_course_project\\labmanagement\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|d:\\\u6587\u4EF6\\data_base_course_project\\labmanagement\\deviceeditform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\deviceeditform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|solutionrelative:deviceeditform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|d:\\\u6587\u4EF6\\data_base_course_project\\labmanagement\\currentuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\currentuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{068DF471-A0F3-4085-B596-4CE379C52372}|LabManagement.csproj|solutionrelative:currentuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -42,8 +42,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 254,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DeviceEditForm.cs",
+              "DocumentMoniker": "D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\DeviceEditForm.cs",
+              "RelativeDocumentMoniker": "DeviceEditForm.cs",
+              "ToolTip": "D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\DeviceEditForm.cs",
+              "RelativeToolTip": "DeviceEditForm.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAAwHcAAABhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T14:52:33.354Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DeviceManagementForm.cs",
+              "DocumentMoniker": "D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\DeviceManagementForm.cs",
+              "RelativeDocumentMoniker": "DeviceManagementForm.cs",
+              "ToolTip": "D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\DeviceManagementForm.cs",
+              "RelativeToolTip": "DeviceManagementForm.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAQwDYAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T14:38:24.674Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 6,
@@ -59,7 +85,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MainForm.cs",
               "DocumentMoniker": "D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\MainForm.cs",
               "RelativeDocumentMoniker": "MainForm.cs",
@@ -106,32 +132,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-23T14:32:25.17Z",
               "EditorCaption": " [\u8BBE\u8BA1]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DeviceEditForm.cs",
-              "DocumentMoniker": "D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\DeviceEditForm.cs",
-              "RelativeDocumentMoniker": "DeviceEditForm.cs",
-              "ToolTip": "D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\DeviceEditForm.cs",
-              "RelativeToolTip": "DeviceEditForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHwAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T14:52:33.354Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DeviceManagementForm.cs",
-              "DocumentMoniker": "D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\DeviceManagementForm.cs",
-              "RelativeDocumentMoniker": "DeviceManagementForm.cs",
-              "ToolTip": "D:\\\u6587\u4EF6\\Data_Base_Course_Project\\LabManagement\\DeviceManagementForm.cs",
-              "RelativeToolTip": "DeviceManagementForm.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAQwDYAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T14:38:24.674Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
