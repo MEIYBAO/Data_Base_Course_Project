@@ -40,7 +40,8 @@ namespace LabManagement
 
         private void btnUserManager_Click(object sender, EventArgs e)
         {
-
+            UserManagementForm form = new UserManagementForm();
+            form.ShowDialog();
         }
     }
 }
