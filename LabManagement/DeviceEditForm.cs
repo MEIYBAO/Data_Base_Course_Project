@@ -122,6 +122,42 @@ namespace LabManagement
         private void btnSave_Click_1(object sender, EventArgs e)
         {
 
+            // 🔒 表单验证
+            if (string.IsNullOrWhiteSpace(txtName.Text))
+            {
+                MessageBox.Show("请输入设备名称！");
+                txtName.Focus();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtModel.Text))
+            {
+                MessageBox.Show("请输入设备型号！");
+                txtModel.Focus();
+                return;
+            }
+
+            if (comboStatus.SelectedItem == null)
+            {
+                MessageBox.Show("请选择设备状态！");
+                comboStatus.DroppedDown = true;
+                return;
+            }
+
+            if (comboLab.SelectedItem == null || !(comboLab.SelectedItem is ComboBoxItem))
+            {
+                MessageBox.Show("请选择实验室！");
+                comboLab.DroppedDown = true;
+                return;
+            }
+
+            if (comboManager.SelectedItem == null || !(comboManager.SelectedItem is ComboBoxItem))
+            {
+                MessageBox.Show("请选择设备负责人！");
+                comboManager.DroppedDown = true;
+                return;
+            }
+
             string sql;
             bool isEdit = deviceId.HasValue;
 
