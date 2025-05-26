@@ -47,16 +47,26 @@ namespace LabManagement
 
                 comboLab.Items.Add(new ComboBoxItem("➕ 添加新实验室", -1));
 
-                // 加载管理员
-                SqlCommand mgrCmd = new SqlCommand("SELECT ManagerID, Name FROM Manager", conn);
-                SqlDataReader mgrReader = mgrCmd.ExecuteReader();
-                while (mgrReader.Read())
+                if (CurrentUser.Role == "管理员")
                 {
-                    comboManager.Items.Add(new ComboBoxItem(mgrReader["Name"].ToString(), (int)mgrReader["ManagerID"]));
-                }
-                mgrReader.Close();
+                    // 加载所有用户作为设备管理员
+                    SqlCommand mgrCmd = new SqlCommand("SELECT UserName, User_name FROM UserInfo", conn);
+                    SqlDataReader mgrReader = mgrCmd.ExecuteReader();
+                    while (mgrReader.Read())
+                    {
+                        comboManager.Items.Add(new ComboBoxItem(mgrReader["User_name"].ToString(), mgrReader["UserName"].ToString()));
+                    }
+                    mgrReader.Close();
 
-                comboManager.Items.Add(new ComboBoxItem("➕ 添加新管理员", -1));
+                    comboManager.Items.Add(new ComboBoxItem("➕ 添加新管理员", -1));
+                }
+                else
+                {
+                    // 普通用户，只能选择自己
+                    comboManager.Items.Add(new ComboBoxItem(CurrentUser.UserName, CurrentUser.UserName));
+                    comboManager.SelectedIndex = 0;
+                    comboManager.Enabled = false; // 不允许修改
+                }
             }
         }
 
@@ -91,7 +101,7 @@ namespace LabManagement
                     // 设置 comboManager 选中项
                     foreach (var obj in comboManager.Items)
                     {
-                        if (obj is ComboBoxItem item && (int)item.Value == (int)reader["ManagerID"])
+                        if (obj is ComboBoxItem item && item.Value.ToString() == reader["ManagerID"].ToString())
                         {
                             comboManager.SelectedItem = item;
                             break;
@@ -111,6 +121,7 @@ namespace LabManagement
 
         private void btnSave_Click_1(object sender, EventArgs e)
         {
+
             string sql;
             bool isEdit = deviceId.HasValue;
 
@@ -133,7 +144,16 @@ namespace LabManagement
                 cmd.Parameters.AddWithValue("@date", datePurchase.Value);
                 cmd.Parameters.AddWithValue("@status", comboStatus.Text);
                 cmd.Parameters.AddWithValue("@lab", ((ComboBoxItem)comboLab.SelectedItem).Value);
-                cmd.Parameters.AddWithValue("@manager", ((ComboBoxItem)comboManager.SelectedItem).Value);
+                if (CurrentUser.Role == "管理员")
+                {
+                    cmd.Parameters.AddWithValue("@manager", ((ComboBoxItem)comboManager.SelectedItem).Value);
+                }
+                else
+                {
+                    // 普通用户只能将自己作为设备负责人
+                    cmd.Parameters.AddWithValue("@manager", CurrentUser.UserName);
+                }
+
                 if (isEdit) cmd.Parameters.AddWithValue("@id", deviceId.Value);
 
                 conn.Open();
@@ -175,7 +195,7 @@ namespace LabManagement
 
         private void comboManager_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboManager.SelectedItem is ComboBoxItem selectedItem && (int)selectedItem.Value == -1)
+            if (comboManager.SelectedItem is ComboBoxItem selectedItem && selectedItem.Value.ToString() == "-1")
             {
                 // 打开新增管理员窗口
                 AddManagerForm addMgr = new AddManagerForm();

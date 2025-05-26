@@ -11,10 +11,9 @@ using System.Windows.Forms;
 
 namespace LabManagement
 {
-
-    public partial class LoginForm: Form
+    public partial class LoginForm : Form
     {
-        private List<string> LoadUserPermissionsFromDatabase(int userId)
+        private List<string> LoadUserPermissionsFromDatabase(string userName)
         {
             List<string> permissions = new List<string>();
             string connStr = "Data Source=localhost;Initial Catalog=LabDeviceManagement;Integrated Security=True;";
@@ -23,12 +22,13 @@ namespace LabManagement
             SELECT P.PermissionName 
             FROM UserPermission UP
             JOIN Permission P ON UP.PermissionID = P.PermissionID
-            WHERE UP.UserID = @userId";
+            WHERE UP.UserName = @userName";
+
 
             using (SqlConnection conn = new SqlConnection(connStr))
             using (SqlCommand cmd = new SqlCommand(sql, conn))
             {
-                cmd.Parameters.AddWithValue("@userId", userId);
+                cmd.Parameters.AddWithValue("@userName", userName);
                 try
                 {
                     conn.Open();
@@ -53,9 +53,8 @@ namespace LabManagement
             this.StartPosition = FormStartPosition.CenterScreen;
             this.Text = "用户登录 - 实验室设备管理系统";
             this.Icon = new Icon(Application.StartupPath + @"\Resources\logo.ico");
-            this.AcceptButton = btnLogin; // 让回车键触发登录按钮
-            this.CancelButton = btnExit; // 设置 ESC 快捷键退出
-
+            this.AcceptButton = btnLogin;
+            this.CancelButton = btnExit;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -71,9 +70,9 @@ namespace LabManagement
 
             string connStr = "Data Source=localhost;Initial Catalog=LabDeviceManagement;Integrated Security=True;";
             string sql = @"
-            SELECT UserID, Role FROM UserInfo 
-            WHERE Username = @username 
-            AND PasswordHash = HASHBYTES('SHA2_256', @password)";
+                SELECT Role FROM UserInfo 
+                WHERE UserName = @username 
+                AND PasswordHash = HASHBYTES('SHA2_256', @password)";
 
             using (SqlConnection conn = new SqlConnection(connStr))
             using (SqlCommand cmd = new SqlCommand(sql, conn))
@@ -88,11 +87,9 @@ namespace LabManagement
                     {
                         if (reader.Read())
                         {
-                            int userId = reader.GetInt32(0);
-                            string role = reader.GetString(1);
+                            string role = reader.GetString(0);
 
-                            //  初始化全局用户状态
-                            CurrentUser.UserID = userId;
+                            // 设置当前用户信息（示例 CurrentUser）
                             CurrentUser.UserName = username;
                             CurrentUser.Role = role;
 
@@ -102,10 +99,10 @@ namespace LabManagement
                             }
                             else
                             {
-                                CurrentUser.Permissions = LoadUserPermissionsFromDatabase(userId);
+                                CurrentUser.Permissions = LoadUserPermissionsFromDatabase(username);
                             }
 
-                            DialogResult = DialogResult.OK; // 登录成功，关闭窗口
+                            DialogResult = DialogResult.OK;
                             this.Close();
                         }
                         else
@@ -121,13 +118,6 @@ namespace LabManagement
             }
         }
 
-
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void chkShowPwd_CheckedChanged(object sender, EventArgs e)
         {
             txtPassword.UseSystemPasswordChar = !chkShowPwd.Checked;
@@ -135,7 +125,6 @@ namespace LabManagement
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-          
             DialogResult result = MessageBox.Show(
                 "确定要退出系统吗？",
                 "退出确认",
@@ -146,7 +135,6 @@ namespace LabManagement
             {
                 Application.Exit();
             }
-
         }
     }
 }

@@ -22,16 +22,37 @@ namespace LabManagement
 
         private void LoadDeviceList()
         {
-            string sql = @"
-                SELECT D.DeviceID, D.DeviceName, D.Model, D.PurchaseDate, D.Status,
-                       L.LabName, M.Name AS ManagerName
-                FROM Device D
-                JOIN Lab L ON D.LabID = L.LabID
-                JOIN Manager M ON D.ManagerID = M.ManagerID";
+            string sql;
+
+            if (CurrentUser.Role == "管理员")
+            {
+                sql = @"
+            SELECT D.DeviceID, D.DeviceName, D.Model, D.PurchaseDate, D.Status,
+                   L.LabName, U.User_name AS ManagerName
+            FROM Device D
+            JOIN Lab L ON D.LabID = L.LabID
+            JOIN UserInfo U ON D.ManagerID = U.UserName";
+            }
+            else
+            {
+                sql = @"
+            SELECT D.DeviceID, D.DeviceName, D.Model, D.PurchaseDate, D.Status,
+                   L.LabName, U.User_name AS ManagerName
+            FROM Device D
+            JOIN Lab L ON D.LabID = L.LabID
+            JOIN UserInfo U ON D.ManagerID = U.UserName
+            WHERE D.ManagerID = @managerId";
+            }
 
             using (SqlConnection conn = new SqlConnection(connStr))
-            using (SqlDataAdapter adapter = new SqlDataAdapter(sql, conn))
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
             {
+                if (CurrentUser.Role != "管理员")
+                {
+                    cmd.Parameters.AddWithValue("@managerId", CurrentUser.UserName);
+                }
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable table = new DataTable();
                 adapter.Fill(table);
                 dgvDevices.DataSource = table;

@@ -1,8 +1,7 @@
 CREATE TABLE UserPermission (
-    UserID INT,
+    UserName NVARCHAR(50),
     PermissionID INT,
     GrantTime DATETIME DEFAULT GETDATE(),
-    PRIMARY KEY (UserID, PermissionID),
-    FOREIGN KEY (UserID) REFERENCES UserInfo(UserID),
+    PRIMARY KEY (UserName, PermissionID),
     FOREIGN KEY (PermissionID) REFERENCES Permission(PermissionID)
 );
