@@ -1,0 +1,53 @@
+## Ignore build results
+bin/
+obj/
+[Bb]uild/
+[Bb]uilds/
+
+## Ignore Visual Studio temporary files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## Ignore debug/release files
+*.pdb
+*.cache
+*.dbmdl
+*.bak
+*.backup.json
+
+## Ignore compiled binaries
+*.exe
+*.dll
+
+## Ignore logs and reports
+*.log
+*.tlog
+
+## Ignore NuGet packages
+*.nupkg
+packages/
+*.snupkg
+
+## Ignore Visual Studio Code settings
+.vscode/
+
+## Ignore Rider IDE files
+.idea/
+
+## Ignore test result files
+TestResult*/
+*.vspscc
+*.vssscc
+
+## Ignore Resharper and other tool files
+_ReSharper*/
+*.DotSettings.user
+
+## Ignore temporary generated files
+*.tmp
+*.temp
+*.swp
+~$*
