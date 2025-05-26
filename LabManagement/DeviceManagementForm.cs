@@ -73,17 +73,44 @@ namespace LabManagement
             if (dgvDevices.CurrentRow != null)
             {
                 int deviceId = Convert.ToInt32(dgvDevices.CurrentRow.Cells["DeviceID"].Value);
-                string sql = "DELETE FROM Device WHERE DeviceID = @id";
+                string deviceName = dgvDevices.CurrentRow.Cells["DeviceName"].Value.ToString();
 
-                using (SqlConnection conn = new SqlConnection(connStr))
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                DialogResult result = MessageBox.Show(
+                    $"确认要删除设备【{deviceName}】吗？",
+                    "确认删除",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
                 {
-                    cmd.Parameters.AddWithValue("@id", deviceId);
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                }
+                    using (SqlConnection conn = new SqlConnection(connStr))
+                    {
+                        conn.Open();
 
-                LoadDeviceList();
+                        // 1️⃣ 删除设备
+                        string sql = "DELETE FROM Device WHERE DeviceID = @id";
+                        using (SqlCommand cmd = new SqlCommand(sql, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@id", deviceId);
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        // 2️⃣ 写入日志
+                        string logSql = @"INSERT INTO DeviceLog (DeviceID, Action, Operator, ActionDate, Note)
+                                  VALUES (@deviceId, @action, @operator, @date, @note)";
+                        using (SqlCommand logCmd = new SqlCommand(logSql, conn))
+                        {
+                            logCmd.Parameters.AddWithValue("@deviceId", deviceId);
+                            logCmd.Parameters.AddWithValue("@action", "删除设备");
+                            logCmd.Parameters.AddWithValue("@operator", CurrentUser.UserName);
+                            logCmd.Parameters.AddWithValue("@date", DateTime.Now);
+                            logCmd.Parameters.AddWithValue("@note", $"删除设备：{deviceName}");
+                            logCmd.ExecuteNonQuery();
+                        }
+                    }
+
+                    LoadDeviceList();
+                }
             }
         }
 

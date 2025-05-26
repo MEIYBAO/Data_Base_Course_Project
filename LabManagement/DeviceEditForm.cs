@@ -29,7 +29,6 @@ namespace LabManagement
 
         private void LoadLabAndManager()
         {
-
             comboLab.Items.Clear();
             comboManager.Items.Clear();
 
@@ -37,6 +36,7 @@ namespace LabManagement
             {
                 conn.Open();
 
+                // 加载实验室
                 SqlCommand labCmd = new SqlCommand("SELECT LabID, LabName FROM Lab", conn);
                 SqlDataReader labReader = labCmd.ExecuteReader();
                 while (labReader.Read())
@@ -45,14 +45,21 @@ namespace LabManagement
                 }
                 labReader.Close();
 
+                comboLab.Items.Add(new ComboBoxItem("➕ 添加新实验室", -1));
+
+                // 加载管理员
                 SqlCommand mgrCmd = new SqlCommand("SELECT ManagerID, Name FROM Manager", conn);
                 SqlDataReader mgrReader = mgrCmd.ExecuteReader();
                 while (mgrReader.Read())
                 {
                     comboManager.Items.Add(new ComboBoxItem(mgrReader["Name"].ToString(), (int)mgrReader["ManagerID"]));
                 }
+                mgrReader.Close();
+
+                comboManager.Items.Add(new ComboBoxItem("➕ 添加新管理员", -1));
             }
         }
+
 
 
         private void LoadDeviceInfo(int id)
@@ -94,20 +101,28 @@ namespace LabManagement
             }
         }
 
+        private int GetLastInsertedDeviceId(SqlConnection conn)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT IDENT_CURRENT('Device')", conn);
+            return Convert.ToInt32(cmd.ExecuteScalar());
+        }
+
 
 
         private void btnSave_Click_1(object sender, EventArgs e)
         {
             string sql;
-            if (deviceId.HasValue)
+            bool isEdit = deviceId.HasValue;
+
+            if (isEdit)
             {
                 sql = @"UPDATE Device SET DeviceName=@name, Model=@model, PurchaseDate=@date,
-                        Status=@status, LabID=@lab, ManagerID=@manager WHERE DeviceID=@id";
+                Status=@status, LabID=@lab, ManagerID=@manager WHERE DeviceID=@id";
             }
             else
             {
                 sql = @"INSERT INTO Device (DeviceName, Model, PurchaseDate, Status, LabID, ManagerID)
-                        VALUES (@name, @model, @date, @status, @lab, @manager)";
+                VALUES (@name, @model, @date, @status, @lab, @manager)";
             }
 
             using (SqlConnection conn = new SqlConnection(connStr))
@@ -119,10 +134,27 @@ namespace LabManagement
                 cmd.Parameters.AddWithValue("@status", comboStatus.Text);
                 cmd.Parameters.AddWithValue("@lab", ((ComboBoxItem)comboLab.SelectedItem).Value);
                 cmd.Parameters.AddWithValue("@manager", ((ComboBoxItem)comboManager.SelectedItem).Value);
-                if (deviceId.HasValue) cmd.Parameters.AddWithValue("@id", deviceId.Value);
+                if (isEdit) cmd.Parameters.AddWithValue("@id", deviceId.Value);
 
                 conn.Open();
                 cmd.ExecuteNonQuery();
+
+                // ✅ 获取设备ID（新建需用 SELECT IDENT_CURRENT）
+                int realDeviceId = isEdit ? deviceId.Value : GetLastInsertedDeviceId(conn);
+
+                // ✅ 写入日志
+                string logSql = @"INSERT INTO DeviceLog (DeviceID, Action, Operator, ActionDate, Note)
+                          VALUES (@deviceId, @action, @operator, @date, @note)";
+                using (SqlCommand logCmd = new SqlCommand(logSql, conn))
+                {
+                    logCmd.Parameters.AddWithValue("@deviceId", realDeviceId);
+                    logCmd.Parameters.AddWithValue("@action", isEdit ? "修改设备信息" : "创建设备");
+                    logCmd.Parameters.AddWithValue("@operator", CurrentUser.UserName);  // 登录用户
+                    logCmd.Parameters.AddWithValue("@date", DateTime.Now);
+                    logCmd.Parameters.AddWithValue("@note", "通过编辑页面自动记录");
+                    logCmd.ExecuteNonQuery();
+                }
+
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
@@ -130,7 +162,28 @@ namespace LabManagement
 
         private void comboLab_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (comboLab.SelectedItem is ComboBoxItem selectedItem && (int)selectedItem.Value == -1)
+            {
+                // 打开新增实验室窗口
+                AddLabForm addLab = new AddLabForm();
+                if (addLab.ShowDialog() == DialogResult.OK)
+                {
+                    LoadLabAndManager();
+                }
+            }
+        }
 
+        private void comboManager_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboManager.SelectedItem is ComboBoxItem selectedItem && (int)selectedItem.Value == -1)
+            {
+                // 打开新增管理员窗口
+                AddManagerForm addMgr = new AddManagerForm();
+                if (addMgr.ShowDialog() == DialogResult.OK)
+                {
+                    LoadLabAndManager();
+                }
+            }
         }
     }
 

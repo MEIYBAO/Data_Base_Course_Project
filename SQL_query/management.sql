@@ -1,5 +1,5 @@
 CREATE TABLE Manager (
-    ManagerID INT PRIMARY KEY,
+    ManagerID INT PRIMARY KEY IDENTITY(1,1),
     Name NVARCHAR(50) NOT NULL,
     Contact NVARCHAR(50)
 );

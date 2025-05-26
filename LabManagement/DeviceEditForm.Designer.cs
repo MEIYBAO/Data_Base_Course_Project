@@ -169,6 +169,7 @@
             this.comboManager.Name = "comboManager";
             this.comboManager.Size = new System.Drawing.Size(266, 36);
             this.comboManager.TabIndex = 10;
+            this.comboManager.SelectedIndexChanged += new System.EventHandler(this.comboManager_SelectedIndexChanged);
             // 
             // btnSave
             // 
