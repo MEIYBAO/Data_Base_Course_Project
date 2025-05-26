@@ -67,6 +67,7 @@
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "删除用户";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -77,6 +78,7 @@
             this.btnEdit.TabIndex = 3;
             this.btnEdit.Text = "修改用户";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAuthorize
             // 
@@ -87,6 +89,7 @@
             this.btnAuthorize.TabIndex = 4;
             this.btnAuthorize.Text = "管理权限";
             this.btnAuthorize.UseVisualStyleBackColor = true;
+            this.btnAuthorize.Click += new System.EventHandler(this.btnAuthorize_Click);
             // 
             // btnRefresh
             // 
@@ -97,6 +100,7 @@
             this.btnRefresh.TabIndex = 5;
             this.btnRefresh.Text = "刷新";
             this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // UserManagementForm
             // 

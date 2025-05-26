@@ -127,12 +127,13 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("宋体", 14F);
-            this.btnSave.Location = new System.Drawing.Point(320, 360);
+            this.btnSave.Location = new System.Drawing.Point(324, 351);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(172, 58);
             this.btnSave.TabIndex = 10;
             this.btnSave.Text = "保存";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtPassword
             // 
