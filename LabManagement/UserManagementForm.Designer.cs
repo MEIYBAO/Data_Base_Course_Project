@@ -33,6 +33,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAuthorize = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,7 +46,6 @@
             this.dgvUsers.RowTemplate.Height = 30;
             this.dgvUsers.Size = new System.Drawing.Size(1463, 300);
             this.dgvUsers.TabIndex = 0;
-            //this.dgvUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellContentClick);
             // 
             // btnAdd
             // 
@@ -56,6 +56,7 @@
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "添加用户";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDelete
             // 
@@ -87,11 +88,22 @@
             this.btnAuthorize.Text = "管理权限";
             this.btnAuthorize.UseVisualStyleBackColor = true;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Font = new System.Drawing.Font("宋体", 14F);
+            this.btnRefresh.Location = new System.Drawing.Point(1220, 350);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(189, 65);
+            this.btnRefresh.TabIndex = 5;
+            this.btnRefresh.Text = "刷新";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            // 
             // UserManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1463, 691);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnAuthorize);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnDelete);
@@ -112,5 +124,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAuthorize;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

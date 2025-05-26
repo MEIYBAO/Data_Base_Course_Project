@@ -27,7 +27,7 @@ namespace LabManagement
         private void LoadUserList()
         {
             string sql = @"
-                SELECT U.UserID,U.UserName
+                SELECT U.UserName,U.User_name,U.contact
                 FROM UserInfo U
                 WHERE U.Role='普通用户'";
 
@@ -37,6 +37,15 @@ namespace LabManagement
                 DataTable table = new DataTable();
                 adapter.Fill(table);
                 dgvUsers.DataSource = table;
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            UserEditForm form = new UserEditForm();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                LoadUserList();
             }
         }
     }
