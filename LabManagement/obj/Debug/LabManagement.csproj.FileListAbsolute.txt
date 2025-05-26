@@ -34,3 +34,4 @@ D:\DatabaseProject\Data_Base_Course_Project\LabManagement\obj\Debug\LabManagemen
 D:\文件\Data_Base_Course_Project\LabManagement\obj\Debug\LabManagement.UserManagementForm.resources
 D:\DatabaseProject\Data_Base_Course_Project\LabManagement\obj\Debug\LabManagement.UserEditForm.resources
 D:\DatabaseProject\Data_Base_Course_Project\LabManagement\obj\Debug\LabManagement.AuthorizeForm.resources
+D:\DatabaseProject\Data_Base_Course_Project\LabManagement\obj\Debug\LabManagement.DeviceLogForm.resources
