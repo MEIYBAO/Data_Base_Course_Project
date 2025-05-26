@@ -27,7 +27,7 @@ namespace LabManagement
         private void LoadUserList()
         {
             string sql = @"
-                SELECT U.UserID,U.UserName
+                SELECT U.UserName,U.User_name,U.contact,U.Role
                 FROM UserInfo U
                 WHERE U.Role='普通用户'";
 
@@ -38,6 +38,76 @@ namespace LabManagement
                 adapter.Fill(table);
                 dgvUsers.DataSource = table;
             }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            UserEditForm form = new UserEditForm();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                LoadUserList();
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (dgvUsers.CurrentRow != null)
+            {
+                string strname=dgvUsers.CurrentRow.Cells["UserName"].Value.ToString();
+                UserEditForm form = new UserEditForm(strname);
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    LoadUserList();
+                }
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if(dgvUsers.CurrentRow != null)
+            {
+                string strname = dgvUsers.CurrentRow.Cells["UserName"].Value.ToString();
+
+                DialogResult result = MessageBox.Show(
+                    $"确认要删除用户名为【{strname}】的用户吗？",
+                    "确认删除",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    using (SqlConnection conn = new SqlConnection(connStr))
+                    {
+                        conn.Open();
+
+                        //  删除用户
+                        string sql = @"DELETE FROM UserInfo
+                                        WHERE UserName = @name";
+                        using (SqlCommand cmd = new SqlCommand(sql, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@name", strname);
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+
+                    LoadUserList();
+                }
+            }
+        }
+
+        private void btnAuthorize_Click(object sender, EventArgs e)
+        {
+            if (dgvUsers.CurrentRow != null)
+            {
+                string strname = dgvUsers.CurrentRow.Cells["UserName"].Value.ToString();
+                AuthorizeForm form = new AuthorizeForm(strname);
+                form.ShowDialog();
+            }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadUserList();
         }
     }
 }
