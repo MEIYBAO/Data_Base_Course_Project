@@ -43,5 +43,11 @@ namespace LabManagement
             UserManagementForm form = new UserManagementForm();
             form.ShowDialog();
         }
+
+        private void btnViewLog_Click(object sender, EventArgs e)
+        {
+            DeviceLogForm form = new DeviceLogForm();
+            form.ShowDialog();
+        }
     }
 }

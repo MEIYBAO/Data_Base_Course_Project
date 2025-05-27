@@ -30,6 +30,7 @@
         {
             this.btnDeviceManager = new System.Windows.Forms.Button();
             this.btnUserManager = new System.Windows.Forms.Button();
+            this.btnViewLog = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnDeviceManager
@@ -54,11 +55,23 @@
             this.btnUserManager.UseVisualStyleBackColor = true;
             this.btnUserManager.Click += new System.EventHandler(this.btnUserManager_Click);
             // 
+            // btnViewLog
+            // 
+            this.btnViewLog.Font = new System.Drawing.Font("宋体", 14F);
+            this.btnViewLog.Location = new System.Drawing.Point(193, 320);
+            this.btnViewLog.Name = "btnViewLog";
+            this.btnViewLog.Size = new System.Drawing.Size(172, 81);
+            this.btnViewLog.TabIndex = 2;
+            this.btnViewLog.Text = "查看日志";
+            this.btnViewLog.UseVisualStyleBackColor = true;
+            this.btnViewLog.Click += new System.EventHandler(this.btnViewLog_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 597);
+            this.Controls.Add(this.btnViewLog);
             this.Controls.Add(this.btnUserManager);
             this.Controls.Add(this.btnDeviceManager);
             this.Name = "MainForm";
@@ -72,5 +85,6 @@
 
         private System.Windows.Forms.Button btnDeviceManager;
         private System.Windows.Forms.Button btnUserManager;
+        private System.Windows.Forms.Button btnViewLog;
     }
 }
