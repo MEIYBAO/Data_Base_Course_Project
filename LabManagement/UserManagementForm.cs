@@ -64,33 +64,47 @@ namespace LabManagement
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if(dgvUsers.CurrentRow != null)
+            if (dgvUsers.CurrentRow != null)
             {
                 string strname = dgvUsers.CurrentRow.Cells["UserName"].Value.ToString();
 
-                DialogResult result = MessageBox.Show(
-                    $"确认要删除用户名为【{strname}】的用户吗？",
-                    "确认删除",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Warning);
-
-                if (result == DialogResult.Yes)
+                using (SqlConnection conn = new SqlConnection(connStr))
                 {
-                    using (SqlConnection conn = new SqlConnection(connStr))
-                    {
-                        conn.Open();
+                    conn.Open();
 
-                        //  删除用户
-                        string sql = @"DELETE FROM UserInfo
-                                        WHERE UserName = @name";
+                    // 1️⃣ 检查是否有设备引用该用户作为管理员
+                    string checkSql = "SELECT COUNT(*) FROM Device WHERE ManagerID = @name";
+                    using (SqlCommand checkCmd = new SqlCommand(checkSql, conn))
+                    {
+                        checkCmd.Parameters.AddWithValue("@name", strname);
+                        int count = (int)checkCmd.ExecuteScalar();
+
+                        if (count > 0)
+                        {
+                            MessageBox.Show($"该用户【{strname}】目前被 {count} 个设备作为管理员使用，无法删除。", "删除失败", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+
+                    // 2️⃣ 提示确认删除
+                    DialogResult result = MessageBox.Show(
+                        $"确认要删除用户名为【{strname}】的用户吗？",
+                        "确认删除",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        // 3️⃣ 执行删除
+                        string sql = @"DELETE FROM UserInfo WHERE UserName = @name";
                         using (SqlCommand cmd = new SqlCommand(sql, conn))
                         {
                             cmd.Parameters.AddWithValue("@name", strname);
                             cmd.ExecuteNonQuery();
                         }
-                    }
 
-                    LoadUserList();
+                        LoadUserList();
+                    }
                 }
             }
         }

@@ -58,7 +58,7 @@ namespace LabManagement
                     }
                     mgrReader.Close();
 
-                    comboManager.Items.Add(new ComboBoxItem("➕ 添加新管理员", -1));
+                    //comboManager.Items.Add(new ComboBoxItem("➕ 添加新管理员", -1));
                 }
                 else
                 {
