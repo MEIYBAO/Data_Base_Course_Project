@@ -52,7 +52,7 @@ namespace LabManagement
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             this.Text = "用户登录 - 实验室设备管理系统";
-            this.Icon = new Icon(Application.StartupPath + @"\Resources\logo.ico");
+            //this.Icon = new Icon(Application.StartupPath + @"\Resources\logo.ico");
             this.AcceptButton = btnLogin;
             this.CancelButton = btnExit;
         }

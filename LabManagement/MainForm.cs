@@ -30,6 +30,7 @@ namespace LabManagement
            
             // 权限控制
             btnUserManager.Visible = CurrentUser.Role == "管理员";
+            btnLab.Visible = CurrentUser.Role == "管理员";
         }
 
         private void btnDeviceManager_Click(object sender, EventArgs e)
@@ -47,6 +48,12 @@ namespace LabManagement
         private void btnViewLog_Click(object sender, EventArgs e)
         {
             DeviceLogForm form = new DeviceLogForm();
+            form.ShowDialog();
+        }
+
+        private void btnLab_Click(object sender, EventArgs e)
+        {
+            EditLabForm form = new EditLabForm();
             form.ShowDialog();
         }
     }
