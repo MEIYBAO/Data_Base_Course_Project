@@ -1,10 +1,22 @@
-_数据库的访问权限要区分（普通用户和管理员），在对数据库处理时要加以区分_
+***数据库课设（包含数据库和报告）完成品在“数据库课程设计_提交”文件夹中***
 
-以下是在login定义的全局角色  
-![全局变量——角色，定义在login窗口](https://github.com/user-attachments/assets/49ef8eee-bba1-46ae-a87a-27308a862d31)
 
-以下是在program.cs里实现角色全局使用的方法  
-![program实现全局角色方法](https://github.com/user-attachments/assets/84c25688-b4e6-4407-bce3-68fb896b6038)
+# 登录账号密码
+由于采用了Hash加密，数据库中无法直接看到密码，在此提供测试账号
 
-以下是角色使用案例，可以据此来区分数据库权限  
-![MainForm使用角色案例](https://github.com/user-attachments/assets/5817cdcb-76ee-4037-959f-ed21988393a1)
+  管理员（拥有所有权限）：
+  
+    账号：dcc
+    
+    密码：123456
+    
+    账号：meiyingbao
+    
+    密码：123456
+    
+  普通用户（拥有增删改权限）：
+  
+    账号：liu
+    
+    密码：123456
+
