@@ -1,0 +1,41 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.8 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.8">
+  <diagram name="第 1 页" id="2QDxryC3W1R1soKMb8vn">
+    <mxGraphModel dx="1102" dy="750" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="I6KZClpiASjdL0xOJXA--3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="I6KZClpiASjdL0xOJXA--1" target="I6KZClpiASjdL0xOJXA--2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I6KZClpiASjdL0xOJXA--1" value="点击保存按钮" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="354" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="I6KZClpiASjdL0xOJXA--5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="I6KZClpiASjdL0xOJXA--2" target="I6KZClpiASjdL0xOJXA--4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I6KZClpiASjdL0xOJXA--9" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="I6KZClpiASjdL0xOJXA--5">
+          <mxGeometry x="-0.0296" y="-3" relative="1" as="geometry">
+            <mxPoint x="19" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I6KZClpiASjdL0xOJXA--7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="I6KZClpiASjdL0xOJXA--2" target="I6KZClpiASjdL0xOJXA--6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I6KZClpiASjdL0xOJXA--8" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="I6KZClpiASjdL0xOJXA--7">
+          <mxGeometry x="-0.1111" y="-4" relative="1" as="geometry">
+            <mxPoint y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I6KZClpiASjdL0xOJXA--2" value="是否填完信息" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="374" y="420" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="I6KZClpiASjdL0xOJXA--4" value="保存到数据库" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="354" y="590" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="I6KZClpiASjdL0xOJXA--6" value="提示用户填入缺失信息" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="530" y="430" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

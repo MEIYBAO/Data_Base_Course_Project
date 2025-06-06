@@ -1,0 +1,83 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.8 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.8">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="1106" dy="1919" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="3yjKPQuZrr2qQNjok_8Q-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="3yjKPQuZrr2qQNjok_8Q-0" target="3yjKPQuZrr2qQNjok_8Q-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3yjKPQuZrr2qQNjok_8Q-3" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="3yjKPQuZrr2qQNjok_8Q-2">
+          <mxGeometry x="-0.0317" y="1" relative="1" as="geometry">
+            <mxPoint x="14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3yjKPQuZrr2qQNjok_8Q-0" value="点击添加实验室" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="200" y="140" width="110" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="3yjKPQuZrr2qQNjok_8Q-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="3yjKPQuZrr2qQNjok_8Q-1" target="3yjKPQuZrr2qQNjok_8Q-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3yjKPQuZrr2qQNjok_8Q-11" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="3yjKPQuZrr2qQNjok_8Q-5">
+          <mxGeometry x="-0.092" y="4" relative="1" as="geometry">
+            <mxPoint x="11" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3yjKPQuZrr2qQNjok_8Q-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="3yjKPQuZrr2qQNjok_8Q-1" target="3yjKPQuZrr2qQNjok_8Q-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3yjKPQuZrr2qQNjok_8Q-10" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="3yjKPQuZrr2qQNjok_8Q-7">
+          <mxGeometry x="-0.2037" y="-3" relative="1" as="geometry">
+            <mxPoint x="6" y="-18" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3yjKPQuZrr2qQNjok_8Q-1" value="实验室名称和位置是否输入" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="196.25" y="320" width="117.5" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="3yjKPQuZrr2qQNjok_8Q-4" value="保存新实验室到数据库" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="195" y="535" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3yjKPQuZrr2qQNjok_8Q-6" value="提示输入实验室名称和位置" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="409" y="345" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3yjKPQuZrr2qQNjok_8Q-14" value="点击DatatGaridView里的元素" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="409" y="-70" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3yjKPQuZrr2qQNjok_8Q-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="3yjKPQuZrr2qQNjok_8Q-17" target="3yjKPQuZrr2qQNjok_8Q-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3yjKPQuZrr2qQNjok_8Q-22" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="3yjKPQuZrr2qQNjok_8Q-21">
+          <mxGeometry x="-0.3067" y="2" relative="1" as="geometry">
+            <mxPoint x="9" y="4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3yjKPQuZrr2qQNjok_8Q-24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="3yjKPQuZrr2qQNjok_8Q-17" target="3yjKPQuZrr2qQNjok_8Q-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3yjKPQuZrr2qQNjok_8Q-25" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="3yjKPQuZrr2qQNjok_8Q-24">
+          <mxGeometry x="0.0138" y="-1" relative="1" as="geometry">
+            <mxPoint y="-16" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3yjKPQuZrr2qQNjok_8Q-17" value="实验室名称和位置是否输入" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="410.25" y="160" width="117.5" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="3yjKPQuZrr2qQNjok_8Q-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="3yjKPQuZrr2qQNjok_8Q-14" target="3yjKPQuZrr2qQNjok_8Q-16">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="469" y="-10" as="sourcePoint" />
+            <mxPoint x="469" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3yjKPQuZrr2qQNjok_8Q-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="3yjKPQuZrr2qQNjok_8Q-16" target="3yjKPQuZrr2qQNjok_8Q-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3yjKPQuZrr2qQNjok_8Q-16" value="点击修改实验室" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="409" y="50" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3yjKPQuZrr2qQNjok_8Q-23" value="保存修改到数据库" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="606.5" y="185" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
